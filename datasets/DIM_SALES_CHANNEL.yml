@@ -1,0 +1,13 @@
+unique_name: DIM_SALES_CHANNEL
+object_type: dataset
+label: Sales Channel
+description: Sales channel master data (DTC, marketplace, B2B channels).
+connection_id: Connection - Fulfillment Cost to Serve
+table: DIM_SALES_CHANNEL
+columns:
+- name: CHANNEL_ID
+  data_type: long
+- name: CHANNEL_NAME
+  data_type: string
+- name: CHANNEL_TYPE
+  data_type: string

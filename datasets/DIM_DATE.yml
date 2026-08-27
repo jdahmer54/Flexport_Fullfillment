@@ -1,0 +1,35 @@
+unique_name: DIM_DATE
+object_type: dataset
+label: Date
+description: Calendar date dimension source; one row per calendar day.
+connection_id: Connection - Fulfillment Cost to Serve
+table: DIM_DATE
+columns:
+- name: DATE_KEY
+  data_type: long
+- name: FULL_DATE
+  data_type: date
+- name: YEAR
+  data_type: long
+- name: QUARTER
+  data_type: long
+- name: QUARTER_LABEL
+  data_type: string
+- name: MONTH
+  data_type: long
+- name: MONTH_LABEL
+  data_type: string
+- name: MONTH_NAME
+  data_type: string
+- name: DAY_OF_MONTH
+  data_type: long
+- name: DAY_OF_WEEK
+  data_type: long
+- name: DAY_NAME
+  data_type: string
+- name: IS_WEEKEND
+  data_type: boolean
+- name: IS_PEAK_SEASON
+  data_type: boolean
+- name: IS_IN_ORDER_WINDOW
+  data_type: boolean

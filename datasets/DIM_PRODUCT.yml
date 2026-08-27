@@ -1,0 +1,21 @@
+unique_name: DIM_PRODUCT
+object_type: dataset
+label: Product
+description: 'Product / SKU master data: category, subcategory, cost, price.'
+connection_id: Connection - Fulfillment Cost to Serve
+table: DIM_PRODUCT
+columns:
+- name: PRODUCT_ID
+  data_type: long
+- name: PRODUCT_SKU
+  data_type: string
+- name: PRODUCT_NAME
+  data_type: string
+- name: CATEGORY
+  data_type: string
+- name: SUBCATEGORY
+  data_type: string
+- name: UNIT_COST
+  data_type: double
+- name: UNIT_PRICE
+  data_type: double
