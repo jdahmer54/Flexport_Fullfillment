@@ -1,0 +1,27 @@
+unique_name: Sales Channel Dimension
+object_type: dimension
+label: Sales Channel Dimension
+description: 'Sales channel rollup: Channel Type > Channel.'
+type: standard
+hierarchies:
+- unique_name: Sales Channel Hierarchy
+  label: Sales Channel Hierarchy
+  levels:
+  - unique_name: Channel Type
+  - unique_name: Channel
+level_attributes:
+- unique_name: Channel Type
+  label: Channel Type
+  description: DTC / Marketplace / B2B.
+  dataset: DIM_SALES_CHANNEL
+  key_columns:
+  - CHANNEL_TYPE
+  name_column: CHANNEL_TYPE
+- unique_name: Channel
+  label: Channel
+  description: Individual sales channel (e.g. Shopify, Walmart Marketplace).
+  is_unique_key: true
+  dataset: DIM_SALES_CHANNEL
+  key_columns:
+  - CHANNEL_ID
+  name_column: CHANNEL_NAME
