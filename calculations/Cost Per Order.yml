@@ -1,0 +1,9 @@
+unique_name: Cost Per Order
+object_type: metric_calc
+label: Cost Per Order
+description: Total fulfillment cost divided by the count of distinct orders — aggregates line-level cost
+  to the order grain before dividing, since the fact is at order-line grain. Drives NLQ3 (cost per order
+  by region / DC, month over month).
+expression: Divide([Measures].[Total Fulfillment Cost], [Measures].[Distinct Order Count])
+format: $#,##0.00
+folder: Cost Metrics

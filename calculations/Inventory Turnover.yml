@@ -1,0 +1,13 @@
+unique_name: Inventory Turnover
+object_type: metric_calc
+label: Inventory Turnover
+description: 'Channel-attributed inventory turnover: that channel''s Units Shipped (from the Order Fulfillment
+  fact, sliced by the Sales Channel dimension) divided by the shared, channel-agnostic Average On-Hand
+  Units (from the Inventory Snapshot fact, over whatever date range the query filters to). Drives NLQ4
+  (inventory turnover by product category, Shopify vs. Walmart Marketplace). See README ''## Assumptions
+  and decisions'' for the cross-fact time-axis design note (Rule 21) — this ratio deliberately does NOT
+  chain a single MDX time member across both facts; each side aggregates independently over its own date
+  relationship, and the BI caller applies a consistent date filter on both sides at query time.'
+expression: Divide([Measures].[Units Shipped], [Measures].[Average On-Hand Units])
+format: '#,##0.00'
+folder: Inventory Metrics

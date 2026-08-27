@@ -1,0 +1,8 @@
+unique_name: Order Fill Rate
+object_type: metric_calc
+label: Order Fill Rate
+description: Units shipped divided by units ordered. Drives NLQ5 (order fill rate trends by distribution
+  center for top merchants).
+expression: Divide([Measures].[Units Shipped], [Measures].[Units Ordered])
+format: percent
+folder: Fulfillment Metrics

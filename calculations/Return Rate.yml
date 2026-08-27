@@ -1,0 +1,7 @@
+unique_name: Return Rate
+object_type: metric_calc
+label: Return Rate
+description: Share of shipped order lines that were returned. Drives NLQ2 (return rate by product category).
+expression: Divide([Measures].[Returned Line Count], [Measures].[Shipped Line Count])
+format: percent
+folder: Returns Metrics

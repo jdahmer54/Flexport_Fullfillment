@@ -1,0 +1,9 @@
+unique_name: On-Time Shipment Rate
+object_type: metric_calc
+label: On-Time Shipment Rate
+description: Share of shipped order lines that shipped on or before the promised ship date. Cancelled
+  lines (never shipped) are excluded from both numerator and denominator. Drives NLQ1 (on-time shipment
+  rate by distribution center).
+expression: Divide([Measures].[On-Time Shipped Line Count], [Measures].[Shipped Line Count])
+format: percent
+folder: Fulfillment Metrics
