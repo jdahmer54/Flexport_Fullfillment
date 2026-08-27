@@ -1,0 +1,10 @@
+unique_name: Returned Line Count
+object_type: metric
+label: Returned Line Count
+description: Count of order lines flagged as returned.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: IS_RETURNED_LINE
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Returns Metrics

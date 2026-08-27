@@ -1,0 +1,11 @@
+unique_name: On-Time Shipped Line Count
+object_type: metric
+label: On-Time Shipped Line Count
+description: Count of shipped order lines where the actual ship date was on or before the promised ship
+  date.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: IS_ON_TIME_LINE
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Fulfillment Metrics

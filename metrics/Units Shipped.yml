@@ -1,0 +1,11 @@
+unique_name: Units Shipped
+object_type: metric
+label: Units Shipped
+description: Total units shipped across order lines. Additive; drives Order Fill Rate and the channel-attributed
+  numerator of Inventory Turnover.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: UNITS_SHIPPED
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Fulfillment Metrics

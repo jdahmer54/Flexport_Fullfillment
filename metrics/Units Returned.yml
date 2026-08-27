@@ -1,0 +1,10 @@
+unique_name: Units Returned
+object_type: metric
+label: Units Returned
+description: Total units returned across order lines. Additive.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: UNITS_RETURNED
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Returns Metrics

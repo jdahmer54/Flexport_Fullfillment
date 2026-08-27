@@ -1,0 +1,10 @@
+unique_name: Total Fulfillment Cost
+object_type: metric
+label: Total Fulfillment Cost
+description: Sum of fulfillment cost (pick/pack/ship) across order lines. 0.00 for cancelled lines.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: FULFILLMENT_COST
+unrelated_dimensions_handling: repeat
+format: $#,##0.00
+folder: Cost Metrics

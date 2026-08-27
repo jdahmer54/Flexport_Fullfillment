@@ -1,0 +1,10 @@
+unique_name: Units Shipped In Period
+object_type: metric
+label: Units Shipped In Period
+description: 'Period flow: total units shipped that month, all channels combined. Additive.'
+calculation_method: sum
+dataset: FACT_INVENTORY_SNAPSHOT
+column: UNITS_SHIPPED_IN_PERIOD
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Inventory Metrics

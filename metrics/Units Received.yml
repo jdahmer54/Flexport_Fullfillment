@@ -1,0 +1,10 @@
+unique_name: Units Received
+object_type: metric
+label: Units Received
+description: 'Period flow: units restocked into the DC that month. Additive.'
+calculation_method: sum
+dataset: FACT_INVENTORY_SNAPSHOT
+column: UNITS_RECEIVED
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Inventory Metrics

@@ -1,0 +1,15 @@
+unique_name: Units On Hand
+object_type: metric
+label: Units On Hand
+description: 'Point-in-time on-hand inventory balance as of a snapshot date. Semi-additive: summable across
+  DC/Product, but last-non-empty (never summed) across snapshot dates.'
+calculation_method: sum
+dataset: FACT_INVENTORY_SNAPSHOT
+column: UNITS_ON_HAND
+unrelated_dimensions_handling: repeat
+format: standard
+semi_additive:
+  position: last
+  relationships:
+  - fact_inventory_snapshot_Date_Dimension
+folder: Inventory Metrics

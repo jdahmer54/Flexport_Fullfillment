@@ -1,0 +1,10 @@
+unique_name: Units Ordered
+object_type: metric
+label: Units Ordered
+description: Total units ordered across order lines. Additive.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: UNITS_ORDERED
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Fulfillment Metrics

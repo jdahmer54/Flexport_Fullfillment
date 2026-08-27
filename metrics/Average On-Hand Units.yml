@@ -1,0 +1,13 @@
+unique_name: Average On-Hand Units
+object_type: metric
+label: Average On-Hand Units
+description: 'Plain average of the units_on_hand balance across whatever snapshot rows fall in the current
+  query context (e.g. the trailing months a BI query filters to). Denominator for Inventory Turnover.
+  Deliberately NOT semi-additive (Rule 19: average is illegal on a metric with a semi_additive block)
+  — this is a distinct, non-semi-additive metric from Units On Hand.'
+calculation_method: average
+dataset: FACT_INVENTORY_SNAPSHOT
+column: UNITS_ON_HAND
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Inventory Metrics

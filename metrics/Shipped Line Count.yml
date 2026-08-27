@@ -1,0 +1,11 @@
+unique_name: Shipped Line Count
+object_type: metric
+label: Shipped Line Count
+description: Count of order lines with units_shipped > 0 (excludes cancelled lines, where on-time / return
+  status is undefined). Denominator for On-Time Shipment Rate and Return Rate.
+calculation_method: sum
+dataset: FACT_ORDER_FULFILLMENT
+column: IS_SHIPPED_LINE
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Fulfillment Metrics

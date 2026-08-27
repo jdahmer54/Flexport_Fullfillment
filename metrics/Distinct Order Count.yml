@@ -1,0 +1,11 @@
+unique_name: Distinct Order Count
+object_type: metric
+label: Distinct Order Count
+description: Count of distinct orders (order_id groups 1-4 order lines into one order). Denominator for
+  Cost Per Order — aggregates line-level cost to the order before dividing.
+calculation_method: count distinct
+dataset: FACT_ORDER_FULFILLMENT
+column: ORDER_ID
+unrelated_dimensions_handling: repeat
+format: standard
+folder: Cost Metrics
