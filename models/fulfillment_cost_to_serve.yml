@@ -1,0 +1,143 @@
+unique_name: fulfillment_cost_to_serve
+object_type: model
+label: Fulfillment Cost to Serve
+description: 'Fulfillment network performance and cost-to-serve model: DC-level service levels, cost efficiency,
+  returns, and inventory turnover across merchants and sales channels.'
+visible: true
+relationships:
+- unique_name: fact_order_fulfillment_Date_Dimension_Order
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - ORDER_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Order {0}
+- unique_name: fact_order_fulfillment_Date_Dimension_PromisedShip
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - PROMISED_SHIP_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Promised Ship {0}
+- unique_name: fact_order_fulfillment_Date_Dimension_ActualShip
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - ACTUAL_SHIP_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Actual Ship {0}
+- unique_name: fact_order_fulfillment_Date_Dimension_PromisedDelivery
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - PROMISED_DELIVERY_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Promised Delivery {0}
+- unique_name: fact_order_fulfillment_Date_Dimension_ActualDelivery
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - ACTUAL_DELIVERY_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Actual Delivery {0}
+- unique_name: fact_order_fulfillment_Date_Dimension_Return
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - RETURN_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: Return {0}
+- unique_name: fact_inventory_snapshot_Date_Dimension
+  from:
+    dataset: FACT_INVENTORY_SNAPSHOT
+    join_columns:
+    - SNAPSHOT_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+- unique_name: fact_order_fulfillment_Distribution_Center_Dimension
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - DC_ID
+  to:
+    dimension: Distribution Center Dimension
+    level: Distribution Center
+- unique_name: fact_order_fulfillment_Sales_Channel_Dimension
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - CHANNEL_ID
+  to:
+    dimension: Sales Channel Dimension
+    level: Channel
+- unique_name: fact_order_fulfillment_Product_Dimension
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product
+- unique_name: fact_order_fulfillment_Merchant_Dimension
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - MERCHANT_ID
+  to:
+    dimension: Merchant Dimension
+    level: Merchant
+- unique_name: fact_order_fulfillment_Return_Reason_Dimension
+  from:
+    dataset: FACT_ORDER_FULFILLMENT
+    join_columns:
+    - RETURN_REASON_ID
+  to:
+    dimension: Return Reason Dimension
+    level: Return Reason
+- unique_name: fact_inventory_snapshot_Distribution_Center_Dimension
+  from:
+    dataset: FACT_INVENTORY_SNAPSHOT
+    join_columns:
+    - DC_ID
+  to:
+    dimension: Distribution Center Dimension
+    level: Distribution Center
+- unique_name: fact_inventory_snapshot_Product_Dimension
+  from:
+    dataset: FACT_INVENTORY_SNAPSHOT
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product
+metrics:
+- unique_name: Units Ordered
+- unique_name: Units Shipped
+- unique_name: Units Returned
+- unique_name: Total Fulfillment Cost
+- unique_name: Distinct Order Count
+- unique_name: Shipped Line Count
+- unique_name: On-Time Shipped Line Count
+- unique_name: Returned Line Count
+- unique_name: Units On Hand
+- unique_name: Average On-Hand Units
+- unique_name: Units Received
+- unique_name: Units Shipped In Period
+- unique_name: On-Time Shipment Rate
+- unique_name: Return Rate
+- unique_name: Cost Per Order
+- unique_name: Order Fill Rate
+- unique_name: Inventory Turnover
