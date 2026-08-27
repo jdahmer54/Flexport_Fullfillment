@@ -1,0 +1,76 @@
+unique_name: Date Dimension
+object_type: dimension
+label: Date Dimension
+description: Calendar date dimension. Role-played six ways on the Order Fulfillment fact (Order, Promised
+  Ship, Actual Ship, Promised Delivery, Actual Delivery, Return) and joined plain (no role-play) to the
+  Inventory Snapshot fact, which carries a single snapshot date — conformed per Rule 21.
+type: time
+hierarchies:
+- unique_name: Date Calendar Hierarchy
+  label: Date Calendar Hierarchy
+  description: 'Standard Gregorian calendar: Year > Quarter > Month > Day.'
+  levels:
+  - unique_name: Year
+  - unique_name: Quarter
+  - unique_name: Month
+  - unique_name: Day
+    secondary_attributes:
+    - unique_name: Is Weekend
+      label: Is Weekend
+      description: Whether the date falls on a weekend.
+      dataset: DIM_DATE
+      key_columns:
+      - IS_WEEKEND
+      name_column: IS_WEEKEND
+    - unique_name: Is Peak Season
+      label: Is Peak Season
+      description: TRUE for November and December (peak fulfillment season).
+      dataset: DIM_DATE
+      key_columns:
+      - IS_PEAK_SEASON
+      name_column: IS_PEAK_SEASON
+    - unique_name: Is In Order Window
+      label: Is In Order Window
+      description: TRUE for dates within the transactional order window; FALSE only for the trailing buffer
+        dates that exist solely so late ship/delivery/return dates resolve to a real date key. No order
+        is ever placed on a FALSE date.
+      dataset: DIM_DATE
+      key_columns:
+      - IS_IN_ORDER_WINDOW
+      name_column: IS_IN_ORDER_WINDOW
+level_attributes:
+- unique_name: Year
+  label: Year
+  dataset: DIM_DATE
+  key_columns:
+  - YEAR
+  name_column: YEAR
+  sort_column: YEAR
+  time_unit: year
+- unique_name: Quarter
+  label: Quarter
+  dataset: DIM_DATE
+  key_columns:
+  - YEAR
+  - QUARTER
+  name_column: QUARTER_LABEL
+  sort_column: QUARTER_LABEL
+  time_unit: quarter
+- unique_name: Month
+  label: Month
+  dataset: DIM_DATE
+  key_columns:
+  - YEAR
+  - MONTH
+  name_column: MONTH_LABEL
+  sort_column: MONTH_LABEL
+  time_unit: month
+- unique_name: Day
+  label: Day
+  dataset: DIM_DATE
+  is_unique_key: true
+  key_columns:
+  - DATE_KEY
+  name_column: FULL_DATE
+  sort_column: DATE_KEY
+  time_unit: day
