@@ -1,0 +1,6 @@
+unique_name: Connection - Fulfillment Cost to Serve
+object_type: connection
+label: Connection - Fulfillment Cost to Serve
+as_connection: Snowflake
+database: FULFILLMENT_COST_TO_SERVE_DEMO
+schema: FULFILLMENT_COST_TO_SERVE
