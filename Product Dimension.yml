@@ -1,0 +1,53 @@
+unique_name: Product Dimension
+object_type: dimension
+label: Product Dimension
+description: 'Product rollup: Category > Subcategory > Product.'
+type: standard
+hierarchies:
+- unique_name: Product Hierarchy
+  label: Product Hierarchy
+  levels:
+  - unique_name: Category
+  - unique_name: Subcategory
+  - unique_name: Product
+    secondary_attributes:
+    - unique_name: Product SKU
+      label: Product SKU
+      dataset: DIM_PRODUCT
+      key_columns:
+      - PRODUCT_SKU
+      name_column: PRODUCT_SKU
+    - unique_name: Unit Cost
+      label: Unit Cost
+      dataset: DIM_PRODUCT
+      key_columns:
+      - UNIT_COST
+      name_column: UNIT_COST
+    - unique_name: Unit Price
+      label: Unit Price
+      dataset: DIM_PRODUCT
+      key_columns:
+      - UNIT_PRICE
+      name_column: UNIT_PRICE
+level_attributes:
+- unique_name: Category
+  label: Category
+  description: Product category — drives the return-rate-by-category NLQ.
+  dataset: DIM_PRODUCT
+  key_columns:
+  - CATEGORY
+  name_column: CATEGORY
+- unique_name: Subcategory
+  label: Subcategory
+  dataset: DIM_PRODUCT
+  key_columns:
+  - CATEGORY
+  - SUBCATEGORY
+  name_column: SUBCATEGORY
+- unique_name: Product
+  label: Product
+  is_unique_key: true
+  dataset: DIM_PRODUCT
+  key_columns:
+  - PRODUCT_ID
+  name_column: PRODUCT_NAME
