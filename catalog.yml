@@ -1,0 +1,6 @@
+version: 1
+unique_name: Flexport_Fulfillment
+object_type: catalog
+label: Flexport_Fulfillment
+aggressive_agg_promotion: false
+build_speculative_aggs: true
