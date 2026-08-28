@@ -5,8 +5,8 @@ description: 'Transaction fact at order-line grain: promised/actual ship & deliv
   fulfillment cost, fill-rate quantities, and return attributes. Carries six date foreign keys to the
   Date dimension (order, promised ship, actual ship, promised delivery, actual delivery, return), each
   role-played.'
-connection_id: Connection - Fulfillment Cost to Serve
-table: FACT_ORDER_FULFILLMENT
+connection_id: connection_fulfillment
+table: fact_order_fulfillment
 columns:
 - name: ORDER_LINE_ID
   data_type: long

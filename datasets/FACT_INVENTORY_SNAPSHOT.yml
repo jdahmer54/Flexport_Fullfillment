@@ -5,8 +5,8 @@ description: Periodic-snapshot fact at DC x product x month-end grain. units_on_
   balance (read as-of one snapshot date, never summed across snapshot dates); units_received / units_shipped_in_period
   are additive period flows. Joins the same conformed Date dimension as the transaction fact, with no
   role-play (single date column — Rule 21).
-connection_id: Connection - Fulfillment Cost to Serve
-table: FACT_INVENTORY_SNAPSHOT
+connection_id: connection_fulfillment
+table: fact_inventory_snapshot
 columns:
 - name: SNAPSHOT_DATE_KEY
   data_type: long

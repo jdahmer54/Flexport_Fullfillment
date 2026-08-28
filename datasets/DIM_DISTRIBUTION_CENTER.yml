@@ -2,8 +2,8 @@ unique_name: DIM_DISTRIBUTION_CENTER
 object_type: dataset
 label: Distribution Center
 description: 'Distribution center (DC) master data: region, location, capacity.'
-connection_id: Connection - Fulfillment Cost to Serve
-table: DIM_DISTRIBUTION_CENTER
+connection_id: connection_fulfillment
+table: dim_distribution_center
 columns:
 - name: DC_ID
   data_type: long

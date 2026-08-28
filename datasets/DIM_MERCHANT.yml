@@ -2,8 +2,8 @@ unique_name: DIM_MERCHANT
 object_type: dataset
 label: Merchant
 description: Fulfillment-customer (merchant) master data.
-connection_id: Connection - Fulfillment Cost to Serve
-table: DIM_MERCHANT
+connection_id: connection_fulfillment
+table: dim_merchant
 columns:
 - name: MERCHANT_ID
   data_type: long

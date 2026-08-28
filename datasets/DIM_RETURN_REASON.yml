@@ -2,8 +2,8 @@ unique_name: DIM_RETURN_REASON
 object_type: dataset
 label: Return Reason
 description: Return reason code master data.
-connection_id: Connection - Fulfillment Cost to Serve
-table: DIM_RETURN_REASON
+connection_id: connection_fulfillment
+table: dim_return_reason
 columns:
 - name: RETURN_REASON_ID
   data_type: long

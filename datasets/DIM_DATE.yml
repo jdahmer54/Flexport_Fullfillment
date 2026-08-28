@@ -2,8 +2,8 @@ unique_name: DIM_DATE
 object_type: dataset
 label: Date
 description: Calendar date dimension source; one row per calendar day.
-connection_id: Connection - Internet Sales
-table: DIM_DATE
+connection_id: connection_fulfillment
+table: dim_date
 columns:
 - name: DATE_KEY
   data_type: long
