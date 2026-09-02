@@ -1,59 +1,63 @@
 unique_name: FACT_ORDER_FULFILLMENT
 object_type: dataset
 label: Order Fulfillment
-description: 'Transaction fact at order-line grain: promised/actual ship & delivery dates, on-time flag,
-  fulfillment cost, fill-rate quantities, and return attributes. Carries six date foreign keys to the
-  Date dimension (order, promised ship, actual ship, promised delivery, actual delivery, return), each
-  role-played.'
+description: >-
+  Transaction fact at order-line grain: promised/actual ship & delivery dates,
+  on-time flag, fulfillment cost, fill-rate quantities, and return attributes.
+  Carries six date foreign keys to the Date dimension (order, promised ship,
+  actual ship, promised delivery, actual delivery, return), each role-played.
+columns:
+  - name: ORDER_LINE_ID
+    data_type: long
+  - name: ORDER_ID
+    data_type: long
+  - name: ORDER_DATE_KEY
+    data_type: int
+  - name: PROMISED_SHIP_DATE_KEY
+    data_type: int
+  - name: PROMISED_DELIVERY_DATE_KEY
+    data_type: int
+  - name: ACTUAL_DELIVERY_DATE_KEY
+    data_type: int
+  - name: DC_ID
+    data_type: int
+  - name: CHANNEL_ID
+    data_type: int
+  - name: PRODUCT_ID
+    data_type: int
+  - name: MERCHANT_ID
+    data_type: int
+  - name: ORDER_STATUS
+    data_type: string
+  - name: UNITS_ORDERED
+    data_type: int
+  - name: UNITS_SHIPPED
+    data_type: int
+  - name: ON_TIME_FLAG
+    data_type: boolean
+  - name: FULFILLMENT_COST
+    data_type: decimal(10,2)
+  - name: IS_RETURNED
+    data_type: boolean
+  - name: RETURN_DATE_KEY
+    data_type: int
+  - name: RETURN_REASON_ID
+    data_type: int
+  - name: UNITS_RETURNED
+    data_type: int
+  - name: IS_SHIPPED_LINE
+    data_type: int
+    sql: CASE WHEN "UNITS_SHIPPED" > 0 THEN 1 ELSE 0 END
+  - name: IS_ON_TIME_LINE
+    data_type: int
+    sql: CASE WHEN "ON_TIME_FLAG" = TRUE THEN 1 ELSE 0 END
+  - name: IS_RETURNED_LINE
+    data_type: int
+    sql: |-
+      CASE WHEN 
+
+      "IS_RETURNED" = TRUE THEN 1 ELSE 0 END
+  - name: ACTUAL_SHIP_DATE_KEY
+    data_type: int
 connection_id: connection_fulfillment
 table: fact_order_fulfillment
-columns:
-- name: ORDER_LINE_ID
-  data_type: long
-- name: ORDER_ID
-  data_type: long
-- name: ORDER_DATE_KEY
-  data_type: long
-- name: PROMISED_SHIP_DATE_KEY
-  data_type: long
-- name: ACTUAL_SHIP_DATE_KEY
-  data_type: long
-- name: PROMISED_DELIVERY_DATE_KEY
-  data_type: long
-- name: ACTUAL_DELIVERY_DATE_KEY
-  data_type: long
-- name: DC_ID
-  data_type: long
-- name: CHANNEL_ID
-  data_type: long
-- name: PRODUCT_ID
-  data_type: long
-- name: MERCHANT_ID
-  data_type: long
-- name: ORDER_STATUS
-  data_type: string
-- name: UNITS_ORDERED
-  data_type: long
-- name: UNITS_SHIPPED
-  data_type: long
-- name: ON_TIME_FLAG
-  data_type: boolean
-- name: FULFILLMENT_COST
-  data_type: double
-- name: IS_RETURNED
-  data_type: boolean
-- name: RETURN_DATE_KEY
-  data_type: long
-- name: RETURN_REASON_ID
-  data_type: long
-- name: UNITS_RETURNED
-  data_type: long
-- name: IS_SHIPPED_LINE
-  data_type: long
-  sql: CASE WHEN UNITS_SHIPPED > 0 THEN 1 ELSE 0 END
-- name: IS_ON_TIME_LINE
-  data_type: long
-  sql: CASE WHEN ON_TIME_FLAG = TRUE THEN 1 ELSE 0 END
-- name: IS_RETURNED_LINE
-  data_type: long
-  sql: CASE WHEN IS_RETURNED = TRUE THEN 1 ELSE 0 END

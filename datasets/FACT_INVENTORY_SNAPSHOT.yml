@@ -1,22 +1,24 @@
 unique_name: FACT_INVENTORY_SNAPSHOT
 object_type: dataset
 label: Inventory Snapshot
-description: Periodic-snapshot fact at DC x product x month-end grain. units_on_hand is a semi-additive
-  balance (read as-of one snapshot date, never summed across snapshot dates); units_received / units_shipped_in_period
-  are additive period flows. Joins the same conformed Date dimension as the transaction fact, with no
-  role-play (single date column — Rule 21).
+description: >-
+  Periodic-snapshot fact at DC x product x month-end grain. units_on_hand is a
+  semi-additive balance (read as-of one snapshot date, never summed across
+  snapshot dates); units_received / units_shipped_in_period are additive period
+  flows. Joins the same conformed Date dimension as the transaction fact, with
+  no role-play (single date column — Rule 21).
+columns:
+  - name: SNAPSHOT_DATE_KEY
+    data_type: int
+  - name: DC_ID
+    data_type: int
+  - name: PRODUCT_ID
+    data_type: int
+  - name: UNITS_ON_HAND
+    data_type: int
+  - name: UNITS_RECEIVED
+    data_type: int
+  - name: UNITS_SHIPPED_IN_PERIOD
+    data_type: int
 connection_id: connection_fulfillment
 table: fact_inventory_snapshot
-columns:
-- name: SNAPSHOT_DATE_KEY
-  data_type: long
-- name: DC_ID
-  data_type: long
-- name: PRODUCT_ID
-  data_type: long
-- name: UNITS_ON_HAND
-  data_type: long
-- name: UNITS_RECEIVED
-  data_type: long
-- name: UNITS_SHIPPED_IN_PERIOD
-  data_type: long

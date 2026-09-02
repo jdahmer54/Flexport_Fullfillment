@@ -2,12 +2,12 @@ unique_name: DIM_MERCHANT
 object_type: dataset
 label: Merchant
 description: Fulfillment-customer (merchant) master data.
+columns:
+  - name: MERCHANT_ID
+    data_type: int
+  - name: MERCHANT_NAME
+    data_type: string
+  - name: MERCHANT_SEGMENT
+    data_type: string
 connection_id: connection_fulfillment
 table: dim_merchant
-columns:
-- name: MERCHANT_ID
-  data_type: long
-- name: MERCHANT_NAME
-  data_type: string
-- name: MERCHANT_SEGMENT
-  data_type: string
